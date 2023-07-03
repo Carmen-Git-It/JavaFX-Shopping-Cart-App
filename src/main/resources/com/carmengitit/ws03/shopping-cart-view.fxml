@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.carmengitit.ws03.controller.ShoppingCartController">
+   <children>
+      <VBox prefHeight="450.0" prefWidth="600.0">
+         <children>
+            <HBox spacing="50.0">
+               <children>
+                  <ComboBox fx:id="itemComboBox" prefWidth="150.0" />
+                  <Label prefHeight="17.0" prefWidth="89.0" text="Select units">
+                     <HBox.margin>
+                        <Insets left="70.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Slider fx:id="unitsSlider" blockIncrement="2.0" majorTickUnit="2.0" max="10.0" minorTickCount="1" prefWidth="200.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" />
+               </children>
+            </HBox>
+            <HBox prefWidth="200.0">
+               <children>
+                  <Label prefWidth="100.0" text="Unit" />
+                  <Label fx:id="unitLabel" prefWidth="100.0" text="0.00" textFill="#1cacff">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <Label text="Purchased units">
+                     <HBox.margin>
+                        <Insets left="24.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="unitQtyLabel" text="0.00" textFill="#1cacff">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin></Label>
+               </children>
+            </HBox>
+            <HBox prefWidth="200.0">
+               <children>
+                  <Label prefWidth="100.0" text="Price/unit" />
+                  <Label fx:id="unitPriceLabel" prefWidth="100.0" text="0.00" textFill="#1cacff">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="40.0" />
+               </VBox.margin>
+               <children>
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add to Cart" />
+                  <Button fx:id="removeButton" mnemonicParsing="false" onAction="#onRemoveButtonClick" text="Remove from Cart">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox prefWidth="200.0">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <TableView fx:id="cartTableView" prefHeight="200.0" prefWidth="300.0">
+                    <columns>
+                      <TableColumn fx:id="nameTableColumn" editable="false" prefWidth="100.0" sortable="false" text="Item Name" />
+                      <TableColumn fx:id="unitsTableColumn" editable="false" prefWidth="100.0" sortable="false" text="Purchased Units" />
+                        <TableColumn fx:id="priceTableColumn" editable="false" prefWidth="100.0" sortable="false" text="Purchase Price" />
+                    </columns>
+                  </TableView>
+                  <ImageView fx:id="itemImageView" fitHeight="200.0" fitWidth="225.0" pickOnBounds="true">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefWidth="200.0">
+               <children>
+                  <Label text="Total Amount:" />
+                  <Label fx:id="totalLabel">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" top="30.0" />
+         </padding>
+      </VBox>
+   </children>
+</Pane>
